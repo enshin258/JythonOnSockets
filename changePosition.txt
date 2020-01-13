@@ -1,0 +1,4 @@
+from com.diamond.iain.javagame import Game
+Game.getPlayer().setX(250)
+Game.getPlayer().setY(250)
+start!

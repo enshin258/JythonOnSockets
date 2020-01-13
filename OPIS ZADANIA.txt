@@ -1,0 +1,23 @@
+Wykonanie poszczególnych podpunktów zadania
+
+a),b) nalezy uruchomic w konsoli następujące polecenie
+(UWAGA program może długo tworzyc jarke gdyż biblioteka jythona dużo zajmuje miesjca)
+java -jar JarFilesChanger-1.0-SNAPSHOT-shaded.jar --i Invaders_with_jython,jar --script skrypt_socket.txt --o wynik.jar
+
+//opis poszczególnych programów
+//JarFilesChanger - jest to program z poprzedniego zadania który modyfikuje jarki
+//Invaders_with_jython - jest to gra Invaders z dołączona biblioteką Jythona
+//skrypt_socket - skrypt dodajacy obsluge socketow i interpreter pythona do jarki
+..wynik.jar - gra invaders nasluchujaca na porcie 4000 skryptow pythona
+
+c),d),e) należu uruchoic gre wynik.jar a następnie np. telnetem przesłać na port 4000 odpowiednie skrypty
+(UWAGA może być opóżnienie kilku sekund)
+-helloJVM.txt - wyswietla popup z napisae
+-changePosition.txt - przesuwa statek we wskazane w skrypcie miejsce
+-readFile.txt - czyta plik "dane.txt" z katalogu uzytkownika a następnie wypisuje na konsoli telnetu na port 4000
+
+Dodatkowe uwagi:
+- na końcu każdego skryptu jest linijka "start!" która powiadamia nasłuchujacy program ze w tym momencie
+trzeba wykonać skrypt pythona (program bez przerwy nasluchuje na porcie)
+- jesli przez przypadek zrobi sie blad przy wpisywaniu skryptu w telnecie to trzeba zacząć od nowa 
+- program czasem zwróci wynik skryptu po kilku sekundach

@@ -1,0 +1,15 @@
+from os.path import expanduser
+from java.io import PrintWriter, OutputStreamWriter
+from java.io import File
+from java.util import Scanner
+from com.diamond.iain.javagame import Game
+from java.util import Scanner
+path = path = expanduser("~") + "\\dane.txt"
+scanner = Scanner(File(path))
+printWriter = PrintWriter(OutputStreamWriter(Game.getSocket().getOutputStream()))
+printWriter.println("***ODCZYT Z PLIKU***")
+while scanner.hasNextLine():
+    printWriter.println(scanner.nextLine())
+printWriter.println("***KONIEC ODCZYTU Z PLIKU***")
+printWriter.flush()
+start!

@@ -1,0 +1,36 @@
+{
+        java.net.ServerSocket serverSocket = new java.net.ServerSocket(4000);
+        socket = serverSocket.accept();
+	javax.script.ScriptEngineManager scriptEngineManager = new javax.script.ScriptEngineManager();
+	javax.script.ScriptEngine scriptEngine = scriptEngineManager.getEngineByName("python");
+		java.lang.StringBuilder code = new java.lang.StringBuilder();
+
+        try
+		{
+		java.util.Scanner scanner = new java.util.Scanner(new java.io.BufferedInputStream(socket.getInputStream()));
+			while (scanner.hasNext())
+			{
+            java.lang.String comingLine = scanner.nextLine();
+				if(comingLine.equals("start!"))
+				{
+
+					scriptEngine.eval(code.toString());
+					code.setLength(0);
+				}
+				else
+				{
+					code.append(comingLine);
+					code.append("\n");
+				}
+			}
+
+		scanner.close();
+		socket.close();
+
+        }
+		catch(Exception e)
+		{
+            System.out.println(e);
+        }
+
+}
